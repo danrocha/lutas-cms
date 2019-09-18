@@ -1,0 +1,44 @@
+{
+  "connection": "default",
+  "collectionName": "livros",
+  "info": {
+    "name": "livro",
+    "description": "Dados sobre os livros."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "titulo": {
+      "required": true,
+      "type": "string"
+    },
+    "sinopse": {
+      "type": "richtext"
+    },
+    "autores": {
+      "collection": "autor",
+      "via": "livros",
+      "dominant": true
+    },
+    "preco": {
+      "type": "decimal",
+      "required": true
+    },
+    "pdf": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "livros",
+      "dominant": true
+    }
+  }
+}

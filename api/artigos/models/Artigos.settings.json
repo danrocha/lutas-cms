@@ -1,0 +1,52 @@
+{
+  "connection": "default",
+  "collectionName": "artigos",
+  "info": {
+    "name": "artigos",
+    "description": "Artigos da equipe Lutas Anticapital"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "required": true,
+      "type": "string"
+    },
+    "data": {
+      "required": true,
+      "type": "date"
+    },
+    "user": {
+      "model": "user",
+      "via": "post",
+      "plugin": "users-permissions"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "texto": {
+      "required": true,
+      "type": "richtext"
+    },
+    "resumo": {
+      "required": true,
+      "type": "text"
+    },
+    "publicar": {
+      "type": "boolean"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "artigos",
+      "dominant": true
+    }
+  }
+}

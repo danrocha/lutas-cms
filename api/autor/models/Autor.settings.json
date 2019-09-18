@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "autores",
+  "info": {
+    "name": "autor",
+    "description": "Dados de autores"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "nome": {
+      "required": true,
+      "type": "string"
+    },
+    "website": {
+      "unique": true,
+      "type": "string"
+    },
+    "biografia": {
+      "type": "text"
+    },
+    "foto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "livros": {
+      "collection": "livro",
+      "via": "autores"
+    }
+  }
+}
