@@ -1,7 +1,10 @@
 {
-  "host": "localhost",
+  "host": "cms.lutasanticapital.com.br",
   "port": "${process.env.PORT || 1337}",
   "production": true,
+  "autoReload": {
+    "enabled": false
+  },
   "proxy": {
     "enabled": false
   },
@@ -9,6 +12,7 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false
+    "autoOpen": false,
+    "path": "/dashboard"
   }
 }
