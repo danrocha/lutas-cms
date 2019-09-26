@@ -55,10 +55,6 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
-    },
-    "post": {
-      "model": "artigos",
-      "via": "user"
     }
   }
 }

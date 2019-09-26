@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "autores",
+  "info": {
+    "name": "author",
+    "description": "Dados de autores"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "required": true,
+      "type": "string"
+    },
+    "website": {
+      "unique": true,
+      "type": "string"
+    },
+    "biography": {
+      "type": "text"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "Email": {
+      "unique": true,
+      "type": "email"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "authors"
+    },
+    "books": {
+      "collection": "book",
+      "via": "authors"
+    }
+  }
+}
